@@ -20,6 +20,11 @@ bool Lista::lista_vacia(){
 	return(primero==0);
 }
 
+void Lista::insertar(Dato d){
+
+	insertar(d, get_tam());
+}
+
 void Lista::insertar(Dato d, unsigned pos){
 
 	Nodo* pnodo = new Nodo(d);

@@ -1,5 +1,4 @@
 
-
 #ifndef NODO_PROVISORIO_H_
 #define NODO_PROVISORIO_H_
 
@@ -7,7 +6,7 @@
 
 using namespace std;
 
-typedef int Dato;
+typedef string Dato;
 
 class Nodo{
 

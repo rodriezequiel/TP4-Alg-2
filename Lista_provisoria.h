@@ -18,6 +18,7 @@ public:
 	~Lista();
 	bool lista_vacia();
 	void insertar(Dato d, unsigned pos);
+	void insertar(Dato d);
 	Dato get_dato(unsigned pos);
 	void elim_dato(unsigned pos);
 	unsigned get_tam();
