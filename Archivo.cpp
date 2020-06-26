@@ -1,5 +1,8 @@
 
 #include "Archivo.h"
+#include "Listas.h"
+#include "Pelicula.h"
+
 
 Archivo::Archivo(){
 
@@ -13,7 +16,8 @@ Archivo::~Archivo(){
 	archivo_no_vistas.close();
 }
 
-void Archivo::cargar_no_vistas(Lista_pelicula &lista){
+template<class T>
+void Archivo::cargar_no_vistas(Lista<Pelicula> &lista_no_vistas){
 
 	string entrada, separado;
 	istringstream stream_actores;
@@ -39,6 +43,7 @@ void Archivo::cargar_no_vistas(Lista_pelicula &lista){
 				stream_actores >> separado;
 				pelicula.asignar_actor(separado);
 			}
+
 
 			if (!archivo_no_vistas.eof()) getline(archivo_no_vistas, entrada);
 

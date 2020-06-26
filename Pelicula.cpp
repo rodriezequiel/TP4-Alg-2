@@ -46,7 +46,7 @@ unsigned Pelicula::obtener_puntuacion(){
 	return this->puntuacion;
 }
 
-Lista* Pelicula::obtener_actores(){
+Lista<string>* Pelicula::obtener_actores(){
 
 	return this->actores;
 }

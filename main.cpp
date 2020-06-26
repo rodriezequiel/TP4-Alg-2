@@ -1,13 +1,15 @@
 
 #include <iostream>
 #include "Archivo.h"
+#include "Listas.h"
+#include "Pelicula.h"
 
 int main(){
 
 	Archivo archivo;
-	Lista_pelicula lista;
+	Lista<Pelicula> lista_no_vistas;
 
-	archivo.cargar_no_vistas(lista);
+	archivo.cargar_no_vistas(lista_no_vistas);
 
 	return 0;
 }

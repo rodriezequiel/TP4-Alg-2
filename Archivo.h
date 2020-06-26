@@ -5,8 +5,9 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
-#include "Lista_provisoria.h"
-#include "LIsta_pelicula/Lista_pelicula.h"
+#include "Listas.h"
+//#include "Lista_provisoria.h"
+//#include "LIsta_pelicula/Lista_pelicula.h"
 #include "Pelicula.h"
 
 using namespace std;
@@ -25,8 +26,8 @@ private:
 public:
 
 	Archivo();
-	void cargar_vistas(Lista_pelicula &);
-	void cargar_no_vistas(Lista_pelicula &);
+	void cargar_vistas(Lista<Pelicula> &lista);
+	void cargar_no_vistas(Lista<Pelicula> &lista_no_vistas);
 	~Archivo();
 };
 
