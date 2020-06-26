@@ -12,22 +12,24 @@ private:
 
 	string titulo, genero, director;
 	unsigned puntuacion;
-	Lista actores;
+	Lista* actores;
 
 public:
 
 	//setters y getters
-	void set_titulo(string);
-	void set_genero(string);
-	void set_director(string);
-	void set_puntuacion(unsigned);
-	void set_actor(string);
+	void asignar_titulo(string);
+	void asignar_genero(string);
+	void asignar_director(string);
+	void asignar_puntuacion(unsigned);
+	void asignar_actor(string);
 
-	string get_titulo();
-	string get_genero();
-	string get_director();
-	unsigned get_puntuacion();
-	Lista get_actores();
+	string obtener_titulo();
+	string obtener_genero();
+	string obtener_director();
+	unsigned obtener_puntuacion();
+	Lista* obtener_actores();
+
+	~Pelicula();
 };
 
 #endif /* PELICULA_H_ */

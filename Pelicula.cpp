@@ -1,56 +1,60 @@
 
 #include "Pelicula.h"
 
-void Pelicula::set_titulo(string t){
+void Pelicula::asignar_titulo(string t){
 
 	titulo = t;
 }
 
-void Pelicula::set_director(string d){
+void Pelicula::asignar_director(string d){
 
 	director = d;
 }
 
-void Pelicula::set_genero(string g){
+void Pelicula::asignar_genero(string g){
 
 	genero = g;
 }
 
-void Pelicula::set_puntuacion(unsigned p){
+void Pelicula::asignar_puntuacion(unsigned p){
 
 	puntuacion = p;
 }
 
-void Pelicula::set_actor(string a){
+void Pelicula::asignar_actor(string a){
 
-	actores.insertar(a);
+	actores->insertar(a);
 }
 
-string Pelicula::get_titulo(){
+string Pelicula::obtener_titulo(){
 
 	return this->titulo;
 }
 
-string Pelicula::get_director(){
+string Pelicula::obtener_director(){
 
 	return this->director;
 }
 
-string Pelicula::get_genero(){
+string Pelicula::obtener_genero(){
 
 	return this->genero;
 }
 
-unsigned Pelicula::get_puntuacion(){
+unsigned Pelicula::obtener_puntuacion(){
 
 	return this->puntuacion;
 }
 
-Lista Pelicula::get_actores(){
+Lista* Pelicula::obtener_actores(){
 
 	return this->actores;
 }
 
+Pelicula::~Pelicula(){
+
+	delete actores;
+}
 
 
 

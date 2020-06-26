@@ -3,6 +3,11 @@
 #define ARCHIVO_H_
 
 #include <fstream>
+#include <iostream>
+#include <sstream>
+#include "Lista_provisoria.h"
+#include "LIsta_pelicula/Lista_pelicula.h"
+#include "Pelicula.h"
 
 using namespace std;
 
@@ -15,14 +20,14 @@ private:
 
 	ifstream archivo_vistas;
 	ifstream archivo_no_vistas;
-
+	Pelicula pelicula;
 
 public:
 
-	void cargar_vistas();
-	void cargar_no_vistas();
-
-
+	Archivo();
+	void cargar_vistas(Lista_pelicula &);
+	void cargar_no_vistas(Lista_pelicula &);
+	~Archivo();
 };
 
 #endif /* ARCHIVO_H_ */
