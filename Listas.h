@@ -77,7 +77,7 @@ void Lista<T>::eliminar_dato(unsigned pos){
 	if(pos == 1 || !(primero->obtener_siguiente())){
 		primero = aux->obtener_siguiente();
 	} else {
-		int i = 1;
+		unsigned i = 1;
 		Nodo<T>* anterior;
 		while(i < pos && aux->obtener_siguiente()){
 			anterior = aux;

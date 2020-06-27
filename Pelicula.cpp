@@ -1,29 +1,13 @@
 
 #include "Pelicula.h"
 
-void Pelicula::asignar_titulo(string t){
+Pelicula::Pelicula(string t, string g, unsigned p, string d, Lista<string> a){
 
 	titulo = t;
-}
-
-void Pelicula::asignar_director(string d){
-
-	director = d;
-}
-
-void Pelicula::asignar_genero(string g){
-
 	genero = g;
-}
-
-void Pelicula::asignar_puntuacion(unsigned p){
-
+	director = d;
 	puntuacion = p;
-}
-
-void Pelicula::asignar_actor(string a){
-
-	actores->insertar(a);
+	actores = a;
 }
 
 string Pelicula::obtener_titulo(){
@@ -46,14 +30,14 @@ unsigned Pelicula::obtener_puntuacion(){
 	return this->puntuacion;
 }
 
-Lista<string>* Pelicula::obtener_actores(){
+Lista<string> Pelicula::obtener_actores(){
 
 	return this->actores;
 }
 
 Pelicula::~Pelicula(){
 
-	delete actores;
+
 }
 
 

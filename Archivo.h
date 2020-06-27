@@ -5,9 +5,7 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
-#include "Listas.h"
-//#include "Lista_provisoria.h"
-//#include "LIsta_pelicula/Lista_pelicula.h"
+
 #include "Pelicula.h"
 
 using namespace std;
@@ -21,13 +19,14 @@ private:
 
 	ifstream archivo_vistas;
 	ifstream archivo_no_vistas;
-	Pelicula pelicula;
+	string titulo, genero, director, puntaje, actores;
+
 
 public:
 
 	Archivo();
-	void cargar_vistas(Lista<Pelicula> &lista);
-	void cargar_no_vistas(Lista<Pelicula> &lista_no_vistas);
+	void cargar_vistas(Lista<Pelicula> &);
+	void cargar_no_vistas(Lista<Pelicula> &);
 	~Archivo();
 };
 

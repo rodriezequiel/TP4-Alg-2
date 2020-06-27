@@ -16,36 +16,35 @@ Archivo::~Archivo(){
 	archivo_no_vistas.close();
 }
 
-template<class T>
 void Archivo::cargar_no_vistas(Lista<Pelicula> &lista_no_vistas){
 
-	string entrada, separado;
+	string separado;
 	istringstream stream_actores;
+	Lista<string> lista_actores;
 
 	if (!archivo_no_vistas.fail()){
 
 		while(!archivo_no_vistas.eof()){
 
-			getline(archivo_no_vistas, entrada);
-			pelicula.asignar_titulo(entrada);
-			getline(archivo_no_vistas, entrada);
-			pelicula.asignar_genero(entrada);
-			getline(archivo_no_vistas, entrada);
-			pelicula.asignar_puntuacion(stoi(entrada));
-			getline(archivo_no_vistas, entrada);
-			pelicula.asignar_director(entrada);
-			getline(archivo_no_vistas, entrada);
+			getline(archivo_no_vistas, titulo);
+			getline(archivo_no_vistas, genero);
+			getline(archivo_no_vistas, puntaje);
+			getline(archivo_no_vistas, director);
+			getline(archivo_no_vistas, actores);
 
-			stream_actores.str(entrada);
+			stream_actores.str(actores);
 
 			while (!stream_actores.eof()){
 
 				stream_actores >> separado;
-				pelicula.asignar_actor(separado);
+				lista_actores.insertar_dato(separado);
 			}
 
+			Pelicula pelicula (titulo, genero, stoi(puntaje), director, lista_actores);
 
-			if (!archivo_no_vistas.eof()) getline(archivo_no_vistas, entrada);
+			lista_no_vistas.insertar_dato(pelicula);
+
+			if (!archivo_no_vistas.eof()) getline(archivo_no_vistas, titulo);
 
 		}
 	}
