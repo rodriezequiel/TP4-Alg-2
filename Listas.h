@@ -25,7 +25,11 @@ class Lista {
 
 		//Pre: Recibe un dato T
 		//Post: Agrega un nodo a la lista e incrementa en 1 el tamaño de la misma
-		void insertar_dato(T* dato_nuevo);
+		void insertar_dato(T &dato_nuevo);
+
+		//Pre: Debe existir el nodo en la posicion pos
+		//Post: Devuelve el nodo en dicha posicion de la lista.
+		Nodo<T>* obtener_nodo(unsigned pos);
 
 		//Pre: Lista creada
 		//Post: Devuelve verdadero si la lista es vacia, falso de lo contrario
@@ -42,6 +46,8 @@ class Lista {
 		//Pre: Lista creada
 		//Post: Imprime los datos de la lista
 		void listar();
+
+		void listar_actores();
 };
 
 template<class T>
@@ -51,16 +57,34 @@ Lista<T>::Lista(){
 }
 
 template<class T>
-void Lista<T>::insertar_dato(T* dato_nuevo){
+void Lista<T>::insertar_dato(T &dato_nuevo){
+
 	Nodo<T>* nuevo_nodo = new Nodo<T>(dato_nuevo);
-	Nodo<T>* aux = primero;
+
 	if(this->lista_vacia()){
+
 		primero = nuevo_nodo;
+
 	} else {
-		while(aux->obtener_siguiente()){
-			aux = aux->obtener_siguiente();
-		} aux->establecer_siguiente(nuevo_nodo);
+
+		Nodo<T>* anterior = obtener_nodo(this->tam);
+		anterior->establecer_siguiente(nuevo_nodo);
+
 	} tam ++;
+}
+
+template <class T>
+Nodo<T>* Lista<T>::obtener_nodo(unsigned pos){
+
+	Nodo<T>* aux = primero;
+	unsigned i = 1;
+
+	while (i < pos){
+
+		aux = aux->obtener_siguiente();
+		i++;
+	}
+	return aux;
 }
 
 template<class T>
@@ -77,25 +101,35 @@ Lista<T>::~Lista(){
 
 template<class T>
 void Lista<T>::eliminar_dato(unsigned pos){
+
 	Nodo<T>* aux = primero;
-	if(pos == 1 || !(primero->obtener_siguiente())){
-		primero = aux->obtener_siguiente();
+
+	if(pos == 1){
+
+		primero = primero->obtener_siguiente();
+
 	} else {
 		unsigned i = 1;
 		Nodo<T>* anterior;
-		while(i < pos && aux->obtener_siguiente()){
+
+		while(i < pos){
+
 			anterior = aux;
 			aux = aux->obtener_siguiente();
 			i++;
-		} anterior->establecer_siguiente(aux->obtener_siguiente());
-	} delete aux;
+		}
+
+		anterior->establecer_siguiente(aux->obtener_siguiente());
+	}
+
+	delete aux;
 	tam --;
 }
 
 template<class T>
 void Lista<T>::listar(){
 	Nodo<T>* aux = primero;
-	T* dato_aux;
+	T dato_aux;
 	if(this->lista_vacia()){
 		cout << "La lista esta vacia" << endl;
 	} else {
@@ -103,6 +137,27 @@ void Lista<T>::listar(){
 		dato_aux = aux->obtener_dato();
 		dato_aux->imprimir_datos();
 		aux = aux->obtener_siguiente();
+		}
+	}
+}
+
+template<class T>
+void Lista<T>::listar_actores(){
+
+	Nodo<T>* aux = primero;
+	string actor;
+
+	if(this->lista_vacia()){
+
+		cout << "No hay actores cargados" << endl;
+
+	} else {
+
+		while(aux != NULL){
+
+			actor = aux->obtener_dato();
+			cout << "\nACTOR: " << actor << endl;
+			aux = aux->obtener_siguiente();
 		}
 	}
 }

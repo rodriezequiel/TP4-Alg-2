@@ -17,17 +17,17 @@ template<class T>
 class Nodo {
 
 	private:
-		T* dato;
+		T dato;
 		Nodo<T>* psig;
 
 	public:
 		//Pre: Recibe un dato T
 		//Crea un nodo con el dato que recibe e inicializa siguiente en NULL
-		Nodo(T* dato_nuevo);
+		Nodo(T dato_nuevo);
 
 		//Pre: Existe el nodo
 		//Post: Devuelve un dato T
-		T* obtener_dato();
+		T obtener_dato();
 
 		//Pre: Existe el nodo
 		//Post: Devuelve el puntero al siguiente nodo, si es el ultimo devuelve NULL
@@ -39,13 +39,13 @@ class Nodo {
 
 		//Pre: -
 		//Post: Le otorga un valor al atributo dato
-		void establecer_dato(T* dato_nuevo);
+		void establecer_dato(T dato_nuevo);
 		~Nodo();
 
 };
 
 template<class T>
-T* Nodo<T>::obtener_dato(){
+T Nodo<T>::obtener_dato(){
 	return dato;
 }
 
@@ -60,18 +60,17 @@ Nodo<T>* Nodo<T>::obtener_siguiente(){
 }
 
 template<class T>
-Nodo<T>::Nodo(T* dato_nuevo){
+Nodo<T>::Nodo(T dato_nuevo){
 	dato = dato_nuevo;
 	this->psig = NULL;
 }
 
 template<class T>
 Nodo<T>::~Nodo(){
-	delete dato;
 }
 
 template<class T>
-void Nodo<T>::establecer_dato(T* dato_nuevo){
+void Nodo<T>::establecer_dato(T dato_nuevo){
 	dato = dato_nuevo;
 }
 

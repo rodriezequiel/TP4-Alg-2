@@ -7,7 +7,7 @@
 int main(){
 
 	Archivo archivo;
-	Lista<Pelicula> lista_no_vistas;
+	Lista<Pelicula*> lista_no_vistas;
 
 	archivo.cargar_no_vistas(lista_no_vistas);
 	lista_no_vistas.listar();

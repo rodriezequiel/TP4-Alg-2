@@ -1,13 +1,18 @@
 
 #include "Pelicula.h"
 
-Pelicula::Pelicula(string t, string g, unsigned p, string d, Lista<string>* actores){
+Pelicula::Pelicula(string t, string g, unsigned p, string d){
 
 	titulo = t;
 	genero = g;
 	director = d;
 	puntuacion = p;
-	this->actores = actores;
+	pun_actores= &actores;
+}
+
+void Pelicula::agregar_actor(string actor){
+
+	actores.insertar_dato(actor);
 }
 
 string Pelicula::obtener_titulo(){
@@ -29,21 +34,21 @@ unsigned Pelicula::obtener_puntuacion(){
 
 	return this->puntuacion;
 }
+
 /*
 Lista<string> Pelicula::obtener_actores(){
 
 	return this->actores;
 }
 */
-Pelicula::~Pelicula(){
-}
 
 void Pelicula::imprimir_datos(){
+
 	cout << titulo << endl;
 	cout << genero << endl;
 	cout << director << endl;
 	cout << puntuacion << endl;
-	this->actores->listar();
+	pun_actores->listar_actores();
 }
 
 
