@@ -18,7 +18,7 @@ Archivo::~Archivo(){
 
 void Archivo::cargar_no_vistas(Lista<Pelicula> &lista_no_vistas){
 
-	string separado;
+	string* separado = new string();
 	istringstream stream_actores;
 	Lista<string> lista_actores;
 
@@ -36,11 +36,11 @@ void Archivo::cargar_no_vistas(Lista<Pelicula> &lista_no_vistas){
 
 			while (!stream_actores.eof()){
 
-				stream_actores >> separado;
+				stream_actores >> (*separado);
 				lista_actores.insertar_dato(separado);
 			}
 
-			Pelicula pelicula (titulo, genero, stoi(puntaje), director, lista_actores);
+			Pelicula* pelicula = new Pelicula(titulo, genero, stoi(puntaje), director, &lista_actores);
 
 			lista_no_vistas.insertar_dato(pelicula);
 

@@ -25,7 +25,7 @@ class Lista {
 
 		//Pre: Recibe un dato T
 		//Post: Agrega un nodo a la lista e incrementa en 1 el tamaño de la misma
-		void insertar_dato(T dato_nuevo);
+		void insertar_dato(T* dato_nuevo);
 
 		//Pre: Lista creada
 		//Post: Devuelve verdadero si la lista es vacia, falso de lo contrario
@@ -38,6 +38,10 @@ class Lista {
 		//Pre: -
 		//Post: Destruye la lista, libera memoria, elimina recursos, etc
 		~Lista();
+
+		//Pre: Lista creada
+		//Post: Imprime los datos de la lista
+		void listar();
 };
 
 template<class T>
@@ -47,7 +51,7 @@ Lista<T>::Lista(){
 }
 
 template<class T>
-void Lista<T>::insertar_dato(T dato_nuevo){
+void Lista<T>::insertar_dato(T* dato_nuevo){
 	Nodo<T>* nuevo_nodo = new Nodo<T>(dato_nuevo);
 	Nodo<T>* aux = primero;
 	if(this->lista_vacia()){
@@ -88,5 +92,19 @@ void Lista<T>::eliminar_dato(unsigned pos){
 	tam --;
 }
 
+template<class T>
+void Lista<T>::listar(){
+	Nodo<T>* aux = primero;
+	T* dato_aux;
+	if(this->lista_vacia()){
+		cout << "La lista esta vacia" << endl;
+	} else {
+		while(aux != NULL){
+		dato_aux = aux->obtener_dato();
+		dato_aux->imprimir_datos();
+		aux = aux->obtener_siguiente();
+		}
+	}
+}
 
 #endif /* LISTAS_H_ */

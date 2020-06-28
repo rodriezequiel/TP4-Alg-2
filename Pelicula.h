@@ -13,13 +13,13 @@ private:
 
 	string titulo, genero, director;
 	unsigned puntuacion;
-	Lista<string> actores;
+	Lista<string>* actores;
 
 public:
 
 	//Pre:
 	//Post:	Crea un objeto pelicula con los datos pasados por parametro.
-	Pelicula(string tit, string gen, unsigned pun, string dir, Lista<string> act);
+	Pelicula(string tit, string gen, unsigned pun, string dir, Lista<string>* actores);
 
 	//getters
 	string obtener_titulo();
@@ -27,8 +27,9 @@ public:
 	string obtener_director();
 	unsigned obtener_puntuacion();
 	Lista<string> obtener_actores();
+	void imprimir_datos();
 
-	Pelicula(){}
+	Pelicula(){};
 	~Pelicula();
 };
 
