@@ -12,7 +12,9 @@ Pelicula::Pelicula(string t, string g, unsigned p, string d){
 
 void Pelicula::agregar_actor(string actor){
 
-	actores.insertar_dato(actor);
+	string * puntero = new string(actor);
+
+	actores.insertar_dato(puntero);
 }
 
 string Pelicula::obtener_titulo(){

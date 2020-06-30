@@ -67,6 +67,7 @@ Nodo<T>::Nodo(T dato_nuevo){
 
 template<class T>
 Nodo<T>::~Nodo(){
+	delete dato;
 }
 
 template<class T>

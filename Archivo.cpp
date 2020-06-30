@@ -16,7 +16,7 @@ Archivo::~Archivo(){
 	archivo_no_vistas.close();
 }
 
-void Archivo::cargar_no_vistas(Lista<Pelicula*> &lista_no_vistas){
+void Archivo::cargar(Lista<Pelicula*> &lista_no_vistas){
 
 	string separado;
 	istringstream stream_actores;
@@ -39,20 +39,14 @@ void Archivo::cargar_no_vistas(Lista<Pelicula*> &lista_no_vistas){
 			while (!stream_actores.eof()){
 
 				stream_actores >> (separado);
-				//cout << separado <<endl;
 				pelicula->agregar_actor(separado);
 			}
 
-			//lista_actores.listar_actores();
-
-			//pelicula->imprimir_datos();
 			lista_no_vistas.insertar_dato(pelicula);
 
-			//lista_no_vistas.listar();
-
 			if (!archivo_no_vistas.eof()) getline(archivo_no_vistas, titulo);
-			stream_actores.clear();
 
+			stream_actores.clear();
 		}
 	}
 }

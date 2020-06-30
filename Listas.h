@@ -145,7 +145,7 @@ template<class T>
 void Lista<T>::listar_actores(){
 
 	Nodo<T>* aux = primero;
-	string actor;
+	string* actor;
 
 	if(this->lista_vacia()){
 
@@ -156,7 +156,7 @@ void Lista<T>::listar_actores(){
 		while(aux != NULL){
 
 			actor = aux->obtener_dato();
-			cout << "\nACTOR: " << actor << endl;
+			cout << "\nACTOR: " << *actor << endl;
 			aux = aux->obtener_siguiente();
 		}
 	}
