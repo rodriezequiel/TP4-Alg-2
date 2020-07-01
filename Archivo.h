@@ -26,6 +26,7 @@ public:
 
 	Archivo();
 	void cargar(Lista<Pelicula*> &);
+	void cargar_vistas(Lista<Pelicula*> &);
 	~Archivo();
 };
 
