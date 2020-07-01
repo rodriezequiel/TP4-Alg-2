@@ -27,7 +27,7 @@ public:
 	string obtener_genero();
 	string obtener_director();
 	unsigned obtener_puntuacion();
-	Lista<string*> obtener_actores();
+	Lista<string*>* obtener_actores();
 
 	//imprime datos por pantalla.(provisorio)
 	void imprimir_datos();

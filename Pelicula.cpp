@@ -37,12 +37,11 @@ unsigned Pelicula::obtener_puntuacion(){
 	return this->puntuacion;
 }
 
-/*
-Lista<string> Pelicula::obtener_actores(){
 
-	return this->actores;
+Lista<string*>* Pelicula::obtener_actores(){
+
+	return this->pun_actores;
 }
-*/
 
 void Pelicula::imprimir_datos(){
 
