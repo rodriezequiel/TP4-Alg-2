@@ -48,6 +48,10 @@ class Lista {
 		void listar();
 
 		void listar_actores();
+
+		unsigned obtener_tam();
+
+		T obtener_dato(unsigned pos);
 };
 
 template<class T>
@@ -160,6 +164,19 @@ void Lista<T>::listar_actores(){
 			aux = aux->obtener_siguiente();
 		}
 	}
+}
+
+template < class T >
+unsigned Lista<T>::obtener_tam()
+{
+	return tam;
+}
+
+template <class T>
+T Lista<T>::obtener_dato(unsigned pos)
+{
+	Nodo<T>* paux = obtener_nodo(pos);
+	return paux -> obtener_dato();
 }
 
 #endif /* LISTAS_H_ */
