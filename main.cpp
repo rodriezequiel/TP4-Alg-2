@@ -12,8 +12,8 @@ int main(){
 	archivo.cargar(lista_no_vistas);
 	archivo.cargar_vistas(lista_vistas);
 
-	Recomendaciones peliculas_recomendadas(lista_vistas, lista_no_vistas);
-	peliculas_recomendadas.recomendar_peliculas();
+	Recomendaciones peliculas_recomendadas;
+	peliculas_recomendadas.recomendar_peliculas(lista_vistas, lista_no_vistas);
 	peliculas_recomendadas.mostrar_recomendadas();
 
 	cout <<"FIN" << endl;

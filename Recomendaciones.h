@@ -8,19 +8,16 @@
 
 class Recomendaciones {
 	private:
-	Lista<Pelicula*> lista_peliculas_vistas;
-	Lista<Pelicula*> lista_peliculas_no_vistas;
 	Lista<Pelicula*> lista_peliculas_recomendadas;
 
 	public:
-		Recomendaciones(Lista<Pelicula*>&, Lista<Pelicula*>&);
 		/*
 		 * PRE: -
 		 * POST: Recomienda las pelis con puntaje alto y las peliculas
 		 * 		 en base a la lista de peliculas vistas va a recorrer la lista,
 		 *		 y una por una las procesa.
 		 */
-		void recomendar_peliculas();
+		void recomendar_peliculas(Lista<Pelicula*>&, Lista<Pelicula*>&);
 
 		/*
 		 * PRE: Recibe una pelicula vista
@@ -28,7 +25,7 @@ class Recomendaciones {
 		 */
 
 
-		void procesar_peliculas(Pelicula*);
+		void procesar_peliculas(Pelicula*, Lista<Pelicula*>&);
 
 		void comparar_peliculas(Pelicula*, Pelicula*);
 

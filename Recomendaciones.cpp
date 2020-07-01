@@ -2,22 +2,17 @@
 
 using namespace std;
 
-Recomendaciones::Recomendaciones(Lista<Pelicula*>& vistas, Lista<Pelicula*>& no_vistas){
-	lista_peliculas_vistas = vistas;
-	lista_peliculas_no_vistas = no_vistas;
-}
-
-void Recomendaciones::recomendar_peliculas(){
+void Recomendaciones::recomendar_peliculas(Lista<Pelicula*>& lista_peliculas_vistas, Lista<Pelicula*>& lista_peliculas_no_vistas){
 	recomendar_por_puntaje(lista_peliculas_no_vistas);
 
 	if(!lista_peliculas_vistas.lista_vacia()){
 		for(unsigned i = 1; i <= lista_peliculas_vistas.obtener_tam(); i++){
-			procesar_peliculas(lista_peliculas_vistas.obtener_dato(i));
+			procesar_peliculas(lista_peliculas_vistas.obtener_dato(i),lista_peliculas_no_vistas );
 		}
 	}
 }
 
-void Recomendaciones::procesar_peliculas(Pelicula* peli_vista){
+void Recomendaciones::procesar_peliculas(Pelicula* peli_vista, Lista<Pelicula*>& lista_peliculas_no_vistas ){
 	Pelicula* peli_no_vista;
 
 	for(unsigned i = 1; i <= lista_peliculas_no_vistas.obtener_tam(); i++){
@@ -81,7 +76,7 @@ void Recomendaciones::comparar_actor(string* actor, Pelicula* peli_no_vista,  bo
 	}
 }
 
-void Recomendaciones::recomendar_por_puntaje(Lista<Pelicula*>& lista_no_vistas){
+void Recomendaciones::recomendar_por_puntaje(Lista<Pelicula*>& lista_peliculas_no_vistas){
 	Pelicula* peli_no_vista;
 
 	for(unsigned i = 1; i <= lista_peliculas_no_vistas.obtener_tam(); i++){
