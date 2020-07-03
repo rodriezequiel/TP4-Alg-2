@@ -53,6 +53,7 @@ bool Recomendaciones::comparar_lista_actores(Pelicula* peli_vista, Pelicula* pel
 	Lista<string*>* lista_actores;
 	lista_actores = peli_vista->obtener_actores();
 	unsigned i = 1;
+
 	while (i <= lista_actores->obtener_tam() && mismo_actor == false){
 		comparar_actor(lista_actores->obtener_dato(i), peli_no_vista, mismo_actor);
 		i++;
@@ -70,9 +71,8 @@ void Recomendaciones::comparar_actor(string* actor, Pelicula* peli_no_vista,  bo
 		actor2 = lista_actores2->obtener_dato(i);
 		if(*actor == *actor2){
 			mismo_actor = true;
-		}else{
-			i++;
 		}
+		i++;
 	}
 }
 
