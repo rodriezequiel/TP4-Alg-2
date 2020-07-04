@@ -15,8 +15,10 @@ template<class T>
 class Lista {
 
 	private:
+
 		Nodo<T>* primero;
 		int tam;
+		bool copia;
 
 	public:
 		//Pre: -
@@ -52,12 +54,15 @@ class Lista {
 		unsigned obtener_tam();
 
 		T obtener_dato(unsigned pos);
+
+		void es_copia();
 };
 
 template<class T>
 Lista<T>::Lista(){
 	primero = 0;
 	tam = 0;
+	copia = false;
 }
 
 template<class T>
@@ -98,6 +103,7 @@ bool Lista<T>::lista_vacia(){
 
 template<class T>
 Lista<T>::~Lista(){
+
 	while(!this->lista_vacia()){
 		this->eliminar_dato(1);
 	}
@@ -125,6 +131,8 @@ void Lista<T>::eliminar_dato(unsigned pos){
 
 		anterior->establecer_siguiente(aux->obtener_siguiente());
 	}
+
+	if(copia) aux->cambiar_liberado();
 
 	delete aux;
 	tam --;
@@ -177,6 +185,12 @@ T Lista<T>::obtener_dato(unsigned pos)
 {
 	Nodo<T>* paux = obtener_nodo(pos);
 	return paux -> obtener_dato();
+}
+
+template <class T>
+void Lista<T>::es_copia(){
+
+	copia = true;
 }
 
 #endif /* LISTAS_H_ */

@@ -19,6 +19,7 @@ class Nodo {
 	private:
 		T dato;
 		Nodo<T>* psig;
+		bool liberado;
 
 	public:
 		//Pre: Recibe un dato T
@@ -40,6 +41,9 @@ class Nodo {
 		//Pre: -
 		//Post: Le otorga un valor al atributo dato
 		void establecer_dato(T dato_nuevo);
+
+		void cambiar_liberado();
+
 		~Nodo();
 
 };
@@ -63,11 +67,24 @@ template<class T>
 Nodo<T>::Nodo(T dato_nuevo){
 	dato = dato_nuevo;
 	this->psig = NULL;
+	liberado = false;
+}
+
+template <class T>
+void Nodo<T>::cambiar_liberado(){
+
+	if(this->liberado==false){
+		this->liberado = true;
+	} else this->liberado = false;
 }
 
 template<class T>
 Nodo<T>::~Nodo(){
-	delete dato;
+
+	if (liberado==false){
+		delete dato;
+		liberado = true;
+	}
 }
 
 template<class T>

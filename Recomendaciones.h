@@ -7,10 +7,18 @@
 #include "Archivo.h"
 
 class Recomendaciones {
-	private:
-		Lista<Pelicula*> lista_peliculas_recomendadas;
 
-	public:
+private:
+
+	Lista<Pelicula*> lista_peliculas_recomendadas;
+
+public:
+		/*
+		 * PRE: -
+		 * POST: Crea un objeto recomendaciones seteando la lista-peliculas-recomendadas
+		 * 		 como copia.
+		 */
+		Recomendaciones();
 		/*
 		 * PRE: -
 		 * POST: Recomienda las pelis con puntaje alto y

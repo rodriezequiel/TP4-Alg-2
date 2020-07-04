@@ -2,7 +2,13 @@
 
 using namespace std;
 
+Recomendaciones::Recomendaciones(){
+
+	lista_peliculas_recomendadas.es_copia();
+}
+
 void Recomendaciones::recomendar_peliculas(Lista<Pelicula*>& lista_peliculas_vistas, Lista<Pelicula*>& lista_peliculas_no_vistas){
+
 	recomendar_por_puntaje(lista_peliculas_no_vistas);
 
 	if(!lista_peliculas_vistas.lista_vacia()){
