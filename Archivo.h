@@ -7,6 +7,7 @@
 #include <sstream>
 
 #include "Pelicula.h"
+#include "Excepcion.h"
 
 using namespace std;
 
@@ -17,17 +18,68 @@ class Archivo {
 
 private:
 
-	ifstream archivo_vistas;
-	ifstream archivo_no_vistas;
-	string titulo, genero, director, puntaje, actores;
-
+//	ifstream archivo_vistas;
+//	ifstream archivo_no_vistas;
+	string titulo, genero, director, puntaje, actores, archivo_no_vistas, archivo_vistas;
+	bool abrio_vistas;
+	bool abrio_no_vistas;
+	Excepcion excepcion;
 
 public:
 
+	/*
+	 * PRE: -
+	 * POST: Construye un objeto de tipo Archivo
+	 */
 	Archivo();
-	void cargar(Lista<Pelicula*> &);
-	void cargar_vistas(Lista<Pelicula*> &);
+
+	/*
+	 * PRE: Recibe un puntero a una lista y un archivo de texto
+	 * POST: Carga correctamente los datos leidos del archivo de texto a la lista correspondiente
+	 */
+	void cargar(Lista<Pelicula*> &lista, ifstream* archivo);
+
+	/*
+	 * PRE: Recibe un puntero a una lista y un string
+	 * POST: Cierra los archivos correctamente
+	 */
+	void abrir_archivos(Lista<Pelicula*> & lista, string archivo);
+
+	/*
+	 * PRE: Recibe un string
+	 * POST: Establece true o false al atributo correspondiente
+	 */
+	void chequear_archivo(string archivo);
+
+	/*
+	* PRE: Recibe un string
+	* POST: Devuelve true y el string ingresado es igual a ARCHIVO_VISTAS, false en caso contrario
+	*/
+	bool comparar_archivos(string archivo);
+
+	/*
+	* PRE: -
+	* POST: Devuelve un booleano
+	*/
+	bool obtener_abrio_vistas();
+
+	/*
+	* PRE: -
+	* POST: Devuelve un booleano
+	*/
+	bool obtener_abrio_no();
+
+	/*
+	 * PRE: Existe el objeto
+	 * POST: Destruye el objeto
+	 */
 	~Archivo();
+
+	/*
+	* PRE: Existe el objeto
+	* POST: Destruye el objeto
+	*/
+	void verificar_ex();
 };
 
 #endif /* ARCHIVO_H_ */

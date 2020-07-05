@@ -5,25 +5,35 @@
 #include "Pelicula.h"
 #include "Recomendaciones.h"
 #include "Menu.h"
+#include "Excepcion.h"
 
 
 
 int main(){
 
-	Archivo archivo;
-	Lista<Pelicula*> lista_no_vistas;
-	Lista<Pelicula*> lista_vistas;
-	archivo.cargar(lista_no_vistas);
-	archivo.cargar_vistas(lista_vistas);
+		Archivo archivo;
+		Lista<Pelicula*> lista_no_vistas;
+		Lista<Pelicula*> lista_vistas;
+		archivo.abrir_archivos(lista_no_vistas, ARCHIVO_NO_VISTAS);
+		archivo.abrir_archivos(lista_vistas, ARCHIVO_VISTAS);
 
-	Recomendaciones peliculas_recomendadas;
-	peliculas_recomendadas.recomendar_peliculas(lista_vistas, lista_no_vistas);
-	peliculas_recomendadas.mostrar_recomendadas();
+		if(archivo.obtener_abrio_vistas() == false){
+			Recomendaciones peliculas_recomendadas;
+			peliculas_recomendadas.recomendar_por_puntaje(lista_no_vistas);
+			peliculas_recomendadas.mostrar_recomendadas();
+		}
+		else if(archivo.obtener_abrio_vistas() == true && archivo.obtener_abrio_no() == true) {
+			Recomendaciones peliculas_recomendadas;
+			peliculas_recomendadas.recomendar_peliculas(lista_vistas, lista_no_vistas);
+			peliculas_recomendadas.mostrar_recomendadas();
+		}
 
-	cout <<"FIN" << endl;
-	/*
-	Menu menu_1;
-	menu_1.selector_de_caminos();
-	*/
+		try {
+			archivo.verificar_ex();
+		}
+		catch (Excepcion &ex){
+			cout << ex.what() << endl;
+		}
+
 	return 0;
 };

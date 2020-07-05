@@ -11,8 +11,8 @@
 using namespace std;
 
 Menu::Menu(){
-    archivo.cargar(lista_no_vistas);
-	archivo.cargar_vistas(lista_vistas);
+ //   archivo.cargar(lista_no_vistas);
+//	archivo.cargar_vistas(lista_vistas);
 	peliculas_recomendadas.recomendar_peliculas(lista_vistas, lista_no_vistas);
 };
 

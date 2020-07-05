@@ -16,34 +16,54 @@ template<class T>
 
 class Nodo {
 
-	private:
-		T dato;
-		Nodo<T>* psig;
-		bool liberado;
+private:
 
-	public:
-		//Pre: Recibe un dato T
-		//Crea un nodo con el dato que recibe e inicializa siguiente en NULL
-		Nodo(T dato_nuevo);
+	T dato;
+	Nodo<T>* psig;
+	bool liberado;
 
-		//Pre: Existe el nodo
-		//Post: Devuelve un dato T
-		T obtener_dato();
+public:
 
-		//Pre: Existe el nodo
-		//Post: Devuelve el puntero al siguiente nodo, si es el ultimo devuelve NULL
-		Nodo<T>* obtener_siguiente();
+	/*
+	* PRE: Recibe un dato T
+	* POST: Crea un nodo con el dato que recibe e inicializa siguiente en NULL
+	*/
+	Nodo(T dato_nuevo);
 
-		//Pre: -
-		//Post: El puntero al siguiente nodo apuntara a psig
-		void establecer_siguiente(Nodo<T>* psig);
+	/*
+	* PRE: Existe el nodo
+	* POST: Devuelve un dato T
+	*/
+	T obtener_dato();
 
-		//Pre: -
-		//Post: Le otorga un valor al atributo dato
-		void establecer_dato(T dato_nuevo);
+	/*
+	* PRE: Existe el nodo
+	* POST: Devuelve el puntero al siguiente nodo, si es el ultimo devuelve NULL
+	*/
+	Nodo<T>* obtener_siguiente();
 
-		void cambiar_liberado();
+	/*
+	* PRE: -
+	* POST: El puntero al siguiente nodo apuntara a psig
+	*/
+	void establecer_siguiente(Nodo<T>* psig);
 
+	/*
+	* PRE: -
+	* POST: Le otorga un valor al atributo dato
+	*/
+	void establecer_dato(T dato_nuevo);
+
+	/*
+	 * PRE: Existe el nodo
+	 * POST: Modifica el atributo liberado
+	 */
+	void cambiar_liberado();
+
+	/*
+	 * PRE: Existe el nodo
+	 * POST: Librera memoria dinamica, elimina recursos, etc.
+	 */
 		~Nodo();
 
 };

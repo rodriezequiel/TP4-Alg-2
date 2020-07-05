@@ -50,6 +50,7 @@ void Pelicula::imprimir_datos(){
 	cout << director << endl;
 	cout << puntuacion << endl;
 	pun_actores->listar_actores();
+	cout << endl;
 }
 
 

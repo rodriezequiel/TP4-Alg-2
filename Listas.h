@@ -14,48 +14,78 @@
 template<class T>
 class Lista {
 
-	private:
+private:
 
-		Nodo<T>* primero;
-		int tam;
-		bool copia;
+	Nodo<T>* primero;
+	int tam;
+	bool copia;
 
-	public:
-		//Pre: -
-		//Post: Construye una lista vacia
-		Lista();
+public:
+	/*
+	* PRE: -
+	* POST: Construye una lista vacia
+	*/
+	Lista();
 
-		//Pre: Recibe un dato T
-		//Post: Agrega un nodo a la lista e incrementa en 1 el tamaño de la misma
-		void insertar_dato(T &dato_nuevo);
+	/*
+	* PRE: Recibe un dato T
+	* POST: Agrega un nodo a la lista e incrementa en 1 el tamaño de la misma
+	*/
+	void insertar_dato(T &dato_nuevo);
 
-		//Pre: Debe existir el nodo en la posicion pos
-		//Post: Devuelve el nodo en dicha posicion de la lista.
-		Nodo<T>* obtener_nodo(unsigned pos);
+	/*
+	* PRE: Debe existir el nodo en la posicion pos
+	* POST: Devuelve el nodo en dicha posicion de la lista.
+	*/
+	Nodo<T>* obtener_nodo(unsigned pos);
 
-		//Pre: Lista creada
-		//Post: Devuelve verdadero si la lista es vacia, falso de lo contrario
-		bool lista_vacia();
+	/*
+	* PRE: Lista creada
+	* POST: Devuelve verdadero si la lista es vacia, falso de lo contrario
+	*/
+	bool lista_vacia();
 
-		//Pre: Lista creada y no vacia, 0 < pos <= tam
-		//Post: Libera el nodo que esta en la posicion
-		void eliminar_dato(unsigned pos);
+	/*
+	* PRE: Lista creada y no vacia, 0 < pos <= tam
+	* POST: Libera el nodo que esta en la posicion
+	*/
+	void eliminar_dato(unsigned pos);
 
-		//Pre: -
-		//Post: Destruye la lista, libera memoria, elimina recursos, etc
-		~Lista();
+	/*
+	* PRE: -
+	* POST: Destruye la lista, libera memoria, elimina recursos, etc
+	*/
+	~Lista();
 
-		//Pre: Lista creada
-		//Post: Imprime los datos de la lista
-		void listar();
+	/*
+	* PRE: Lista creada
+	* POST: Imprime los datos de la lista
+	 */
+	void listar();
 
-		void listar_actores();
+	/*
+	 * PRE: -
+	 * POST: Imprime por pantalla los datos de la lista
+	 */
+	void listar_actores();
 
-		unsigned obtener_tam();
+	/*
+	 * PRE: -
+	 * POST: Devuelve un unsigned
+	 */
+	unsigned obtener_tam();
 
-		T obtener_dato(unsigned pos);
+	/*
+	 * PRE: -
+	 * POST: Devuelve un dato T
+	 */
+	T obtener_dato(unsigned pos);
 
-		void es_copia();
+	/*
+	 * PRE: -
+	 * POST: Establece el atributo copia en true
+	 */
+	void es_copia();
 };
 
 template<class T>

@@ -19,6 +19,7 @@ void Recomendaciones::recomendar_peliculas(Lista<Pelicula*>& lista_peliculas_vis
 }
 
 void Recomendaciones::procesar_peliculas(Pelicula* peli_vista, Lista<Pelicula*>& lista_peliculas_no_vistas ){
+
 	Pelicula* peli_no_vista;
 
 	for(unsigned i = 1; i <= lista_peliculas_no_vistas.obtener_tam(); i++){
@@ -83,6 +84,7 @@ void Recomendaciones::comparar_actor(string* actor, Pelicula* peli_no_vista,  bo
 }
 
 void Recomendaciones::recomendar_por_puntaje(Lista<Pelicula*>& lista_peliculas_no_vistas){
+
 	Pelicula* peli_no_vista;
 
 	for(unsigned i = 1; i <= lista_peliculas_no_vistas.obtener_tam(); i++){
@@ -98,8 +100,10 @@ Lista<Pelicula*> Recomendaciones::obtener_peliculas_recomendadas(){
 }
 
 void Recomendaciones::mostrar_recomendadas(){
+
 	Pelicula* peli;
 	cout << "Las peliculas recomendadas son: " << endl;
+
 	for(unsigned i = 1; i <= lista_peliculas_recomendadas.obtener_tam(); i++){
 		peli = lista_peliculas_recomendadas.obtener_dato(i);
 		cout << "-------------------PELICULA " << peli->obtener_titulo() << endl;
