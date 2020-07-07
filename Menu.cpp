@@ -11,8 +11,8 @@
 using namespace std;
 
 Menu::Menu(){
- //   archivo.cargar(lista_no_vistas);
-//	archivo.cargar_vistas(lista_vistas);
+    archivo.cargar(lista_no_vistas, archivo);
+	archivo.cargar_vistas(lista_vistas, archivo);
 	peliculas_recomendadas.recomendar_peliculas(lista_vistas, lista_no_vistas);
 };
 
@@ -21,42 +21,37 @@ void Menu::inicio(){
 };
 
 void Menu::selector_de_caminos(){
-    string eleccion;
+    int eleccion;
     bool esta_activo = true;
 
     instrucciones_menu();
     cout << "_ ";
     cin >> eleccion;
     while(esta_activo){
-
-        if(eleccion == "VISTAS"){
-            lista_vistas.listar();
-
-        }else{
-            if(eleccion == "NO.VISTAS"){
+        switch(eleccion){
+            case 1:
+                lista_vistas.listar();
+                break;
+            case 2:
                 lista_no_vistas.listar();
+                break;
+            case 3:
+                peliculas_recomendadas.mostrar_recomendadas();
+                break;
+            case 5:
+                esta_activo = false;
+                limpiar_pantalla();
+                cout << "FIN DE PROGRAMA";
+                break;
+            case 0:
+                instrucciones_menu();
+                break;
+            default:
+                cout << "TERMINO ingresado, NO reconocido. ";
+                cout << "\n\n\n\n";
+                break;
+    }
 
-                }else{
-                    if(eleccion == "RECOMENDAR"){
-                        peliculas_recomendadas.mostrar_recomendadas();
-
-                    }else{
-                        if(eleccion == "SALIR"){
-                            esta_activo = false;
-                            limpiar_pantalla();
-                            cout << "FIN DE PROGRAMA";
-
-                            }else{
-                                if(eleccion == "MENU"){
-                                    instrucciones_menu();
-                                }else{
-                                cout << "TERMINO ingresado, NO reconocido. ";
-                                cout << "\n\n\n\n";
-                                }
-                            }
-                    }
-            }
-        }
     cout << endl;
     cout << "_ ";
     cin >> eleccion;
@@ -66,14 +61,14 @@ void Menu::selector_de_caminos(){
 void Menu::instrucciones_menu(){
     cout<< " ----------------------------------MENU---------------------------------- " <<endl;
     cout<< "|                                                                        |" <<endl;
-    cout<< "| Ingrese UNO de los siguientes TERMINOS en mayusculas:                  |" <<endl;
+    cout<< "| Ingrese el NUMERO del comando a ejecutar:                              |" <<endl;
     cout<< "|                                                                        |" <<endl;
-    cout<< "|   VISTAS      Listar las peliculas vistas.                             |" <<endl;
-    cout<< "|   NO.VISTAS   Listar las peliculas no vistas.                          |" <<endl;
-    cout<< "|   RECOMENDAR  Listar peliculas recomendadas.                           |" <<endl;
+    cout<< "|   1_VISTAS      Listar las peliculas vistas.                           |" <<endl;
+    cout<< "|   2_NO.VISTAS   Listar las peliculas no vistas.                        |" <<endl;
+    cout<< "|   3_RECOMENDAR  Listar peliculas recomendadas.                         |" <<endl;
     cout<< "|                                                                        |" <<endl;
-    cout<< "|   MENU        Muestra esta ventana de texto                            |" <<endl;
-    cout<< "|   SALIR       Termina el programa.                                     |" <<endl;
+    cout<< "|   0_MENU        Muestra esta ventana de texto                          |" <<endl;
+    cout<< "|   5_SALIR       Termina el programa.                                   |" <<endl;
     cout<< " ------------------------------------------------------------------------ " <<endl;
     cout<<endl;
 }
