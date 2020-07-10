@@ -11,12 +11,27 @@
 using namespace std;
 
 Menu::Menu(){
-    archivo.cargar(lista_no_vistas, archivo);
-	archivo.cargar_vistas(lista_vistas, archivo);
-	peliculas_recomendadas.recomendar_peliculas(lista_vistas, lista_no_vistas);
+    archivo.abrir_archivos(lista_no_vistas, ARCHIVO_NO_VISTAS);
+    archivo.abrir_archivos(lista_vistas, ARCHIVO_VISTAS);
+    if(archivo.obtener_abrio_vistas() == false){
+        peliculas_recomendadas.recomendar_por_puntaje(lista_no_vistas);
+        peliculas_recomendadas.mostrar_recomendadas();
+    }
+    else if(archivo.obtener_abrio_vistas() == true && archivo.obtener_abrio_no() == true) {
+        peliculas_recomendadas.recomendar_peliculas(lista_vistas, lista_no_vistas);
+        peliculas_recomendadas.mostrar_recomendadas();
+    }
+
+    try {
+        archivo.verificar_ex();
+    }
+    catch (Excepcion &ex){
+        cout << ex.what() << endl;
+    }
 };
 
 void Menu::inicio(){
+    instrucciones_menu();
     selector_de_caminos();
 };
 
@@ -24,7 +39,6 @@ void Menu::selector_de_caminos(){
     int eleccion;
     bool esta_activo = true;
 
-    instrucciones_menu();
     cout << "_ ";
     cin >> eleccion;
     while(esta_activo){

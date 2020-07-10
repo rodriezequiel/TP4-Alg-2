@@ -8,15 +8,15 @@
 #include "Listas.h"
 #include "Pelicula.h"
 #include "Recomendaciones.h"
+#include "Excepcion.h"
 
 
 class Menu{
 private:
     Archivo archivo;
 	Lista<Pelicula*> lista_no_vistas;
-	Lista<Pelicula*> lista_vistas;
+    Lista<Pelicula*> lista_vistas;
     Recomendaciones peliculas_recomendadas;
-
 public:
     //Pre: -
     //Post: Constructor

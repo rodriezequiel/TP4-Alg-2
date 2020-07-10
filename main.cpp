@@ -10,7 +10,7 @@
 
 
 int main(){
-
+/*
 		Archivo archivo;
 		Lista<Pelicula*> lista_no_vistas;
 		Lista<Pelicula*> lista_vistas;
@@ -34,6 +34,11 @@ int main(){
 		catch (Excepcion &ex){
 			cout << ex.what() << endl;
 		}
+*/
+
+    Menu tp_4;
+    tp_4.inicio();
+
 
 	return 0;
 };
