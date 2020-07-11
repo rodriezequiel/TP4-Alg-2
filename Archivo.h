@@ -18,7 +18,7 @@ class Archivo {
 
 private:
 
-	string titulo, genero, director, puntaje, actores, archivo_no_vistas, archivo_vistas;
+	string titulo, genero, director, puntaje, actores;
 	bool abrio_vistas;
 	bool abrio_no_vistas;
 	Excepcion_falta_no_vistas excepcion;
