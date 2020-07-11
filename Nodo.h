@@ -1,9 +1,3 @@
-/*
- * Nodo.h
- *
- *  Created on: 26 jun. 2020
- *      Author: carolina
- */
 
 #ifndef NODO_H_
 #define NODO_H_
@@ -64,27 +58,31 @@ public:
 	 * PRE: Existe el nodo
 	 * POST: Librera memoria dinamica, elimina recursos, etc.
 	 */
-		~Nodo();
+	~Nodo();
 
 };
 
 template<class T>
 T Nodo<T>::obtener_dato(){
+
 	return dato;
 }
 
 template<class T>
 void Nodo<T>::establecer_siguiente(Nodo<T>* psig){
+
 	this->psig = psig;
 }
 
 template<class T>
 Nodo<T>* Nodo<T>::obtener_siguiente(){
+
 	return this->psig;
 }
 
 template<class T>
 Nodo<T>::Nodo(T dato_nuevo){
+
 	dato = dato_nuevo;
 	this->psig = NULL;
 	liberado = false;
@@ -94,14 +92,17 @@ template <class T>
 void Nodo<T>::cambiar_liberado(){
 
 	if(this->liberado==false){
+
 		this->liberado = true;
-	} else this->liberado = false;
+	}
+	else this->liberado = false;
 }
 
 template<class T>
 Nodo<T>::~Nodo(){
 
 	if (liberado==false){
+
 		delete dato;
 		liberado = true;
 	}
@@ -109,6 +110,7 @@ Nodo<T>::~Nodo(){
 
 template<class T>
 void Nodo<T>::establecer_dato(T dato_nuevo){
+
 	dato = dato_nuevo;
 }
 

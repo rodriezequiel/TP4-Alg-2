@@ -9,7 +9,7 @@ Archivo::Archivo(){
 	abrio_no_vistas = true;
 }
 
-void Archivo::cargar(Lista<Pelicula*> &lista, ifstream* archivo_pelis){
+void Archivo::cargar_listas(Lista<Pelicula*> &lista, ifstream* archivo_pelis){
 
 	string separado;
 	istringstream stream_actores;
@@ -46,9 +46,12 @@ void Archivo::abrir_archivos(Lista<Pelicula*> &lista, string archivo){
 	ifstream archivo_pelis(archivo);
 
 	if(archivo_pelis.fail()){
+
 		chequear_archivo(archivo);
-	} else {
-		cargar(lista, &archivo_pelis);
+	}
+	else {
+
+		cargar_listas(lista, &archivo_pelis);
 	}
 	archivo_pelis.close();
 }
@@ -56,8 +59,11 @@ void Archivo::abrir_archivos(Lista<Pelicula*> &lista, string archivo){
 void Archivo::chequear_archivo(string archivo){
 
 	if(comparar_archivos(archivo) == true){
+
 		abrio_vistas = false;
-	} else {
+	}
+	else {
+
 		abrio_no_vistas = false;
 	}
 }
@@ -69,9 +75,12 @@ bool Archivo::comparar_archivos(string archivo){
 	bool coincidencia = true;
 
 	while(i < tam && coincidencia){
+
 		if(archivo[i] != ARCHIVO_VISTAS[i]){
 			coincidencia = false;
-		} else {
+		}
+		else {
+
 			i++;
 		}
 	}
@@ -80,18 +89,22 @@ bool Archivo::comparar_archivos(string archivo){
 }
 
 bool Archivo::obtener_abrio_vistas(){
+
 	return abrio_vistas;
 }
 
 bool Archivo::obtener_abrio_no(){
+
 	return abrio_no_vistas;
 }
 
 void Archivo::verificar_ex(){
 
 	if(abrio_no_vistas == false){
+
 		throw excepcion;
 	}
+
 }
 
 

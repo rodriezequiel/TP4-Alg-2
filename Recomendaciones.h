@@ -19,6 +19,7 @@ public:
 		 * 		 como copia.
 		 */
 		Recomendaciones();
+
 		/*
 		 * PRE: -
 		 * POST: Recomienda las pelis con puntaje alto y
@@ -68,13 +69,13 @@ public:
 		bool comparar_lista_actores(Pelicula* peli_vista, Pelicula* peli_no_vista );
 
 		/*
-		 * PRE:
+		 * PRE: -
 		 * POST: Compara si los dos actores son iguales.
 		 */
 		void comparar_actor(string*, Pelicula*, bool&);
 
 		/*
-		 * PRE:
+		 * PRE: -
 		 * POST:
 		 */
 		void mostrar_recomendadas();

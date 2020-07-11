@@ -11,7 +11,7 @@ int main(){
 
     Menu menu;
 
-    menu.inicio();
+    menu.iniciar();
 
 	return 0;
 };

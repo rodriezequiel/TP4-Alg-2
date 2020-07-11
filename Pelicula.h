@@ -18,22 +18,52 @@ private:
 
 public:
 
-	//Pre:
-	//Post:	Crea un objeto pelicula con los datos pasados por parametro.
+	/*
+	 * PRE: Recibe variables de tipo string y unsigned
+	 * POST: Crea el objeto pelicula
+	 */
 	Pelicula(string tit, string gen, unsigned pun, string dir);
 
-	//getters
+	/*
+	 * PRE: Existe el objeto pelicula
+	 * POST: Devuelve un string
+	 */
 	string obtener_titulo();
+
+	/*
+	 * PRE: Existe el objeto pelicula
+	 * POST: Devuelve un string
+	 */
 	string obtener_genero();
+
+	/*
+	 * PRE: Existe el objeto pelicula
+	 * POST: Devuelve un string
+	 */
 	string obtener_director();
+
+	/*
+	 * PRE: Existe el objeto pelicula
+	 * POST: Devuelve un unsigned
+	 */
 	unsigned obtener_puntuacion();
+
+	/*
+	 * PRE: Existe el objeto pelicula
+	 * POST: Devuelve un puntero de tipo Lista<string*>*
+	 */
 	Lista<string*>* obtener_actores();
 
-	//imprime datos por pantalla.(provisorio)
+	/*
+	 * PRE: -
+	 * POST: Imprime por pantalla los atributos del objeto Pelicula
+	 */
 	void imprimir_datos();
 
-	//Pre:
-	//Post: Agrega un actor a la lista de actores.
+	/*
+	 * PRE: Recibe un string
+	 * POST: Llama al metodo necesario para agregar un actor a la lista de actores
+	 */
 	void agregar_actor(string);
 };
 

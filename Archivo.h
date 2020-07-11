@@ -21,7 +21,7 @@ private:
 	string titulo, genero, director, puntaje, actores;
 	bool abrio_vistas;
 	bool abrio_no_vistas;
-	Excepcion_falta_no_vistas excepcion;
+	Excepcion excepcion;
 
 public:
 
@@ -35,7 +35,7 @@ public:
 	 * PRE: Recibe un puntero a una lista y un archivo de texto
 	 * POST: Carga correctamente los datos leidos del archivo de texto a la lista correspondiente
 	 */
-	void cargar(Lista<Pelicula*> &lista, ifstream* archivo);
+	void cargar_listas(Lista<Pelicula*> &lista, ifstream* archivo);
 
 	/*
 	 * PRE: Recibe un puntero a una lista y un string

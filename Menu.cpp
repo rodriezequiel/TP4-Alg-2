@@ -14,31 +14,35 @@ Menu::Menu(){
 
     archivo.abrir_archivos(lista_no_vistas, ARCHIVO_NO_VISTAS);
     archivo.abrir_archivos(lista_vistas, ARCHIVO_VISTAS);
+    comenzar_recomendaciones();
 
-    if(archivo.obtener_abrio_vistas() == false){
+}
 
-    	peliculas_recomendadas.recomendar_por_puntaje(lista_no_vistas);
-    }
-    else if(archivo.obtener_abrio_vistas() == true && archivo.obtener_abrio_no() == true) {
+void Menu::comenzar_recomendaciones(){
 
-    	peliculas_recomendadas.recomendar_peliculas(lista_vistas, lista_no_vistas);
-    }
-};
+	if(archivo.obtener_abrio_vistas() == false){
+		peliculas_recomendadas.recomendar_por_puntaje(lista_no_vistas);
+	}
+	else if(archivo.obtener_abrio_vistas() == true && archivo.obtener_abrio_no() == true){
+		peliculas_recomendadas.recomendar_peliculas(lista_vistas, lista_no_vistas);
+	}
+}
 
-void Menu::inicio(){
+void Menu::iniciar(){
 
 	try {
 
 	    archivo.verificar_ex();
-	    selector_de_caminos();
+	    seleccionar_camino();
 	}
-	catch (Excepcion_falta_no_vistas &ex){
+	catch (Excepcion &ex){
 
 		cout << ex.what() << endl;
 	}
-};
 
-void Menu::selector_de_caminos(){
+}
+
+void Menu::seleccionar_camino(){
 
 	int eleccion;
     bool esta_activo = true;
@@ -46,7 +50,7 @@ void Menu::selector_de_caminos(){
     while(esta_activo){
 
     	limpiar_pantalla();
-    	instrucciones_menu();
+    	imprimir_instrucciones();
 
     	cout << "_ ";
     	cin >> eleccion;
@@ -84,7 +88,7 @@ void Menu::selector_de_caminos(){
     }
 }
 
-void Menu::instrucciones_menu(){
+void Menu::imprimir_instrucciones(){
 
 	cout<< " ----------------------------------MENU---------------------------------- " <<endl;
     cout<< "|                                                                        |" <<endl;

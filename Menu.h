@@ -22,29 +22,48 @@ private:
 
 public:
 
-    //Pre: -
-    //Post: Constructor que carga los archivos y utiliza la clase recomendaciones
-    //		para armar las peliculas sugeridas.
+    /*
+     * PRE:: -
+   	 * POST: Constructor que carga los archivos y utiliza la clase recomendaciones
+   	 *		para armar las peliculas sugeridas.
+   	 */
     Menu();
-    //
-    //Post: Da inicio a la carga de las listas y ejecuta instruccicones_menu()
-    void inicio();
 
-    //Pre: -
-    //Post: Bucle de menu para elegir que hace el programa
-    void selector_de_caminos();
+    /*
+     * PRE: -
+     * POST: Da inicio a la carga de las listas y ejecuta instrucciones_menu()
+     */
+    void iniciar();
 
-    //pre: -
-    //Post: Imprime las instrucciones del menu
-    void instrucciones_menu();
+    /*
+     * PRE: -
+     * POST: Bucle de menu para elegir que hace el programa
+     */
+    void seleccionar_camino();
 
-    //Pre: -
-    //Post: Limpia la consola
+    /*
+     * PRE: -
+     * POST: Imprime las instrucciones del menu
+     */
+    void imprimir_instrucciones();
+
+    /*
+     * PRE: -
+     * POST: Limipia la pantalla
+     */
     void limpiar_pantalla();
 
-    //Pre: -
-    //Post: Pregunta al usuario si quiere continuar al menu.
+    /*
+     * PRE: -
+     * POST: Pregunta al usuario si quiere continuar al menu
+     */
     void continuar();
+
+    /*
+     * PRE: -
+     * POST: Llama a los metodos que generaran las respectivas recomendaciones
+     */
+    void comenzar_recomendaciones();
 
 };
 

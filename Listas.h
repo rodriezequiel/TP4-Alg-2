@@ -1,9 +1,3 @@
-/*
- * Listas.h
- *
- *  Created on: 26 jun. 2020
- *      Author: carolina
- */
 
 #ifndef LISTAS_H_
 #define LISTAS_H_
@@ -84,6 +78,7 @@ public:
 
 template<class T>
 Lista<T>::Lista(){
+
 	primero = 0;
 	tam = 0;
 	copia = false;
@@ -97,12 +92,11 @@ void Lista<T>::insertar_dato(T &dato_nuevo){
 	if(this->lista_vacia()){
 
 		primero = nuevo_nodo;
-
-	} else {
+	}
+	else {
 
 		Nodo<T>* anterior = obtener_nodo(this->tam);
 		anterior->establecer_siguiente(nuevo_nodo);
-
 	} tam ++;
 }
 
@@ -122,6 +116,7 @@ Nodo<T>* Lista<T>::obtener_nodo(unsigned pos){
 
 template<class T>
 bool Lista<T>::lista_vacia(){
+
 	return(primero == 0);
 }
 
@@ -129,6 +124,7 @@ template<class T>
 Lista<T>::~Lista(){
 
 	while(!this->lista_vacia()){
+
 		this->eliminar_dato(1);
 	}
 }
@@ -141,8 +137,8 @@ void Lista<T>::eliminar_dato(unsigned pos){
 	if(pos == 1){
 
 		primero = primero->obtener_siguiente();
-
-	} else {
+	}
+	else {
 		unsigned i = 1;
 		Nodo<T>* anterior;
 
@@ -164,12 +160,18 @@ void Lista<T>::eliminar_dato(unsigned pos){
 
 template<class T>
 void Lista<T>::listar(){
+
 	Nodo<T>* aux = primero;
 	T dato_aux;
+
 	if(this->lista_vacia()){
+
 		cout << "La lista esta vacia" << endl;
-	} else {
+
+	}
+	else {
 		while(aux != NULL){
+
 		dato_aux = aux->obtener_dato();
 		dato_aux->imprimir_datos();
 		aux = aux->obtener_siguiente();
@@ -178,14 +180,14 @@ void Lista<T>::listar(){
 }
 
 template < class T >
-unsigned Lista<T>::obtener_tam()
-{
+unsigned Lista<T>::obtener_tam(){
+
 	return tam;
 }
 
 template <class T>
-T Lista<T>::obtener_dato(unsigned pos)
-{
+T Lista<T>::obtener_dato(unsigned pos){
+
 	Nodo<T>* paux = obtener_nodo(pos);
 	return paux -> obtener_dato();
 }
