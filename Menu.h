@@ -12,14 +12,19 @@
 
 
 class Menu{
+
 private:
+
     Archivo archivo;
 	Lista<Pelicula*> lista_no_vistas;
     Lista<Pelicula*> lista_vistas;
     Recomendaciones peliculas_recomendadas;
+
 public:
+
     //Pre: -
-    //Post: Constructor
+    //Post: Constructor que carga los archivos y utiliza la clase recomendaciones
+    //		para armar las peliculas sugeridas.
     Menu();
     //
     //Post: Da inicio a la carga de las listas y ejecuta instruccicones_menu()
@@ -36,6 +41,10 @@ public:
     //Pre: -
     //Post: Limpia la consola
     void limpiar_pantalla();
+
+    //Pre: -
+    //Post: Pregunta al usuario si quiere continuar al menu.
+    void continuar();
 
 };
 

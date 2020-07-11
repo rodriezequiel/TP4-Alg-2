@@ -45,12 +45,18 @@ Lista<string*>* Pelicula::obtener_actores(){
 
 void Pelicula::imprimir_datos(){
 
-	cout << titulo << endl;
-	cout << genero << endl;
-	cout << director << endl;
-	cout << puntuacion << endl;
-	pun_actores->listar_actores();
-	cout << endl;
+	cout << "Titulo: " << titulo << endl;
+	cout << "Genero: " << genero << endl;
+	cout << "Director: " << director << endl;
+	cout << "Puntuacion: " << puntuacion << endl;
+	cout << "Actores: ";
+
+	for(unsigned i=1; i<=pun_actores->obtener_tam(); i++){
+
+		cout << *(pun_actores->obtener_dato(i)) << " ";
+	}
+
+	cout << endl << endl;
 }
 
 

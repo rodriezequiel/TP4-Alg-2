@@ -58,16 +58,10 @@ public:
 	~Lista();
 
 	/*
-	* PRE: Lista creada
+	* PRE: Lista creada, ademas el dato T debera tener un metodo que imprima su contenido.
 	* POST: Imprime los datos de la lista
 	 */
 	void listar();
-
-	/*
-	 * PRE: -
-	 * POST: Imprime por pantalla los datos de la lista
-	 */
-	void listar_actores();
 
 	/*
 	 * PRE: -
@@ -179,27 +173,6 @@ void Lista<T>::listar(){
 		dato_aux = aux->obtener_dato();
 		dato_aux->imprimir_datos();
 		aux = aux->obtener_siguiente();
-		}
-	}
-}
-
-template<class T>
-void Lista<T>::listar_actores(){
-
-	Nodo<T>* aux = primero;
-	string* actor;
-
-	if(this->lista_vacia()){
-
-		cout << "No hay actores cargados" << endl;
-
-	} else {
-
-		while(aux != NULL){
-
-			actor = aux->obtener_dato();
-			cout << "\nACTOR: " << *actor << endl;
-			aux = aux->obtener_siguiente();
 		}
 	}
 }

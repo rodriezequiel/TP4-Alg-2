@@ -10,6 +10,12 @@ Comedia
 Dennis Dugan
 Adam_Sandler Al_Pacino Katie_Holmes
 
+Pelicula no recomendable
+Terror
+5
+Cristopher Nolan
+Bin_Ladden Barack_Obama
+
 Carmen y Lola
 Drama
 7
@@ -21,3 +27,27 @@ Terror
 7
 Kevin Kolsch
 Jason_Clarke Amy_Seimetz John_Lithgow
+
+Pelicula no recomendable con director que coincide
+Indie
+6
+Dennis Dugan
+Roger_Federer Lady_Gaga
+
+Love
+Romance
+6
+Gaspar Noe
+Aomi_Muyock Karl_Glusman Klara_Kristin
+
+Interstellar
+Aventura
+9
+Cristopher Nolan
+Matthew_McConaughey Anne_Hathaway Matt_Daemon Michael_Caine Ellen_Burstyn
+
+The Ridiculous 6
+Comedia
+5
+Frank Coraci
+Adam_Sandler Terry_Crews Jorge_Garcia

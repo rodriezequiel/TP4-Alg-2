@@ -9,10 +9,6 @@ Archivo::Archivo(){
 	abrio_no_vistas = true;
 }
 
-Archivo::~Archivo(){
-
-}
-
 void Archivo::cargar(Lista<Pelicula*> &lista, ifstream* archivo_pelis){
 
 	string separado;
@@ -46,6 +42,7 @@ void Archivo::cargar(Lista<Pelicula*> &lista, ifstream* archivo_pelis){
 }
 
 void Archivo::abrir_archivos(Lista<Pelicula*> &lista, string archivo){
+
 	ifstream archivo_pelis(archivo);
 
 	if(archivo_pelis.fail()){
@@ -57,6 +54,7 @@ void Archivo::abrir_archivos(Lista<Pelicula*> &lista, string archivo){
 }
 
 void Archivo::chequear_archivo(string archivo){
+
 	if(comparar_archivos(archivo) == true){
 		abrio_vistas = false;
 	} else {
@@ -65,9 +63,11 @@ void Archivo::chequear_archivo(string archivo){
 }
 
 bool Archivo::comparar_archivos(string archivo){
+
 	unsigned i = 0;
 	unsigned tam = archivo.length();
 	bool coincidencia = true;
+
 	while(i < tam && coincidencia){
 		if(archivo[i] != ARCHIVO_VISTAS[i]){
 			coincidencia = false;
@@ -75,6 +75,7 @@ bool Archivo::comparar_archivos(string archivo){
 			i++;
 		}
 	}
+
 	return coincidencia;
 }
 
@@ -87,6 +88,7 @@ bool Archivo::obtener_abrio_no(){
 }
 
 void Archivo::verificar_ex(){
+
 	if(abrio_no_vistas == false){
 		throw excepcion;
 	}

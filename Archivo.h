@@ -18,12 +18,10 @@ class Archivo {
 
 private:
 
-//	ifstream archivo_vistas;
-//	ifstream archivo_no_vistas;
 	string titulo, genero, director, puntaje, actores, archivo_no_vistas, archivo_vistas;
 	bool abrio_vistas;
 	bool abrio_no_vistas;
-	Excepcion excepcion;
+	Excepcion_falta_no_vistas excepcion;
 
 public:
 
@@ -68,12 +66,6 @@ public:
 	* POST: Devuelve un booleano
 	*/
 	bool obtener_abrio_no();
-
-	/*
-	 * PRE: Existe el objeto
-	 * POST: Destruye el objeto
-	 */
-	~Archivo();
 
 	/*
 	* PRE: Existe el objeto

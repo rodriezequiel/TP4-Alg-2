@@ -90,8 +90,6 @@ public:
 		 * POST: Devuelve la lista de peliculas recomendadas.
 		 */
 		Lista<Pelicula*> obtener_peliculas_recomendadas();
-
-
 };
 
 

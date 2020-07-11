@@ -13,7 +13,7 @@
 
 using namespace std;
 
-class Excepcion : public exception {
+class Excepcion_falta_no_vistas : public exception {
 
 public:
 
