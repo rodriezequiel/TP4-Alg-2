@@ -23,3 +23,4 @@ public:
 };
 
 #endif /* EXCEPCION_H_ */
+

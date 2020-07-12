@@ -23,6 +23,9 @@ private:
 	bool abrio_no_vistas;
 	Excepcion excepcion;
 
+	bool comparar_archivos(string archivo);
+	void chequear_archivo(string archivo);
+
 public:
 
 	/*
@@ -42,18 +45,6 @@ public:
 	 * POST: Cierra los archivos correctamente
 	 */
 	void abrir_archivos(Lista<Pelicula*> & lista, string archivo);
-
-	/*
-	 * PRE: Recibe un string
-	 * POST: Establece true o false al atributo correspondiente
-	 */
-	void chequear_archivo(string archivo);
-
-	/*
-	* PRE: Recibe un string
-	* POST: Devuelve true y el string ingresado es igual a ARCHIVO_VISTAS, false en caso contrario
-	*/
-	bool comparar_archivos(string archivo);
 
 	/*
 	* PRE: -

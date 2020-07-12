@@ -20,6 +20,12 @@ private:
     Lista<Pelicula*> lista_vistas;
     Recomendaciones peliculas_recomendadas;
 
+    void seleccionar_camino();
+    void imprimir_instrucciones();
+    void limpiar_pantalla();
+    void continuar();
+    void comenzar_recomendaciones();
+
 public:
 
     /*
@@ -31,39 +37,9 @@ public:
 
     /*
      * PRE: -
-     * POST: Da inicio a la carga de las listas y ejecuta instrucciones_menu()
+     * POST: Da inicio a la carga de las listas
      */
     void iniciar();
-
-    /*
-     * PRE: -
-     * POST: Bucle de menu para elegir que hace el programa
-     */
-    void seleccionar_camino();
-
-    /*
-     * PRE: -
-     * POST: Imprime las instrucciones del menu
-     */
-    void imprimir_instrucciones();
-
-    /*
-     * PRE: -
-     * POST: Limipia la pantalla
-     */
-    void limpiar_pantalla();
-
-    /*
-     * PRE: -
-     * POST: Pregunta al usuario si quiere continuar al menu
-     */
-    void continuar();
-
-    /*
-     * PRE: -
-     * POST: Llama a los metodos que generaran las respectivas recomendaciones
-     */
-    void comenzar_recomendaciones();
 
 };
 

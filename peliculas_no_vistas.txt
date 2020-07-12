@@ -10,12 +10,6 @@ Comedia
 Dennis Dugan
 Adam_Sandler Al_Pacino Katie_Holmes
 
-Pelicula no recomendable
-Terror
-5
-Cristopher Nolan
-Bin_Ladden Barack_Obama
-
 Carmen y Lola
 Drama
 7
@@ -24,15 +18,9 @@ Zaira_Romero Rosy_Rodriguez Rafaela_Leon Carolina_Yuste
 
 Cementerio de animales
 Terror
-7
+6
 Kevin Kolsch
 Jason_Clarke Amy_Seimetz John_Lithgow
-
-Pelicula no recomendable con director que coincide
-Indie
-6
-Dennis Dugan
-Roger_Federer Lady_Gaga
 
 Love
 Romance
@@ -40,14 +28,20 @@ Romance
 Gaspar Noe
 Aomi_Muyock Karl_Glusman Klara_Kristin
 
-Interstellar
-Aventura
-9
-Cristopher Nolan
-Matthew_McConaughey Anne_Hathaway Matt_Daemon Michael_Caine Ellen_Burstyn
-
 The Ridiculous 6
 Comedia
 5
 Frank Coraci
 Adam_Sandler Terry_Crews Jorge_Garcia
+
+EL robo del siglo
+Comedia
+7
+Ariel Winograd
+Guillermo_Francella Diego_Peretti Luis_Luque
+
+El Angel
+Crimen
+7
+Luis Ortega
+Lorenzo_Ferro Cecilia_Roth Luis_Gnecco
