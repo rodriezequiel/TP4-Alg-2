@@ -76,7 +76,7 @@ public:
 
 		/*
 		 * PRE: -
-		 * POST:
+		 * POST: Lista las peliculas recomendadas.
 		 */
 		void mostrar_recomendadas();
 

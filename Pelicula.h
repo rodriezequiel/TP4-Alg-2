@@ -65,6 +65,12 @@ public:
 	 * POST: Llama al metodo necesario para agregar un actor a la lista de actores
 	 */
 	void agregar_actor(string);
+
+	/*
+	 * PRE:-
+	 * POST: Imprime todos los actores de la pelicula.
+	 */
+	void listar_actores();
 };
 
 #endif /* PELICULA_H_ */

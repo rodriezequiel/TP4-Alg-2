@@ -11,12 +11,9 @@ void Recomendaciones::recomendar_peliculas(Lista<Pelicula*>& lista_peliculas_vis
 
 	recomendar_por_puntaje(lista_peliculas_no_vistas);
 
-	if(!lista_peliculas_vistas.lista_vacia()){
+	for(unsigned i = 1; i <= lista_peliculas_vistas.obtener_tam(); i++){
 
-		for(unsigned i = 1; i <= lista_peliculas_vistas.obtener_tam(); i++){
-
-			procesar_peliculas(lista_peliculas_vistas.obtener_dato(i),lista_peliculas_no_vistas );
-		}
+		procesar_peliculas(lista_peliculas_vistas.obtener_dato(i),lista_peliculas_no_vistas );
 	}
 }
 
@@ -121,14 +118,8 @@ Lista<Pelicula*> Recomendaciones::obtener_peliculas_recomendadas(){
 
 void Recomendaciones::mostrar_recomendadas(){
 
-	Pelicula* peli;
 	cout << "Las peliculas recomendadas son: \n" << endl;
 
-	for(unsigned i = 1; i <= lista_peliculas_recomendadas.obtener_tam(); i++){
-
-		peli = lista_peliculas_recomendadas.obtener_dato(i);
-		cout << "-------------------PELICULA " << peli->obtener_titulo() << endl;
-		cout << endl;
-	}
+	lista_peliculas_recomendadas.listar();
 }
 
