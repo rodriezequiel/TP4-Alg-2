@@ -25,6 +25,7 @@ private:
 
 	bool comparar_archivos(string archivo);
 	void chequear_archivo(string archivo);
+	void cargar_listas(Lista<Pelicula*> &lista, ifstream* archivo);
 
 public:
 
@@ -33,12 +34,6 @@ public:
 	 * POST: Construye un objeto de tipo Archivo
 	 */
 	Archivo();
-
-	/*
-	 * PRE: Recibe un puntero a una lista y un archivo de texto
-	 * POST: Carga correctamente los datos leidos del archivo de texto a la lista correspondiente
-	 */
-	void cargar_listas(Lista<Pelicula*> &lista, ifstream* archivo);
 
 	/*
 	 * PRE: Recibe un puntero a una lista y un string
