@@ -76,18 +76,18 @@ public:
 
 		/*
 		 * PRE: -
-		 * POST: Lista las peliculas recomendadas.
+		 * POST: Imprime las peliculas recomendadas.
 		 */
 		void mostrar_recomendadas();
 
 		/*
-		 * PRE:
+		 * PRE: -
 		 * POST: Agrega las peliculas a recomendadas si tienen puntaje >= 7.
 		 */
 		void recomendar_por_puntaje(Lista<Pelicula*>&);
 
 		/*
-		 * PRE:
+		 * PRE: -
 		 * POST: Devuelve la lista de peliculas recomendadas.
 		 */
 		Lista<Pelicula*> obtener_peliculas_recomendadas();
